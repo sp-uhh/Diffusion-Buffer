@@ -30,11 +30,11 @@ class Specs(Dataset):
         
         # Read file paths according to file naming format.
         if format == "default":
-            self.clean_files = sorted(glob(join(data_dir, subset, "clean", "*.wav")))[:10]
-            self.noisy_files = sorted(glob(join(data_dir, subset, "noisy", "*.wav")))[:10]
+            self.clean_files = sorted(glob(join(data_dir, subset, "clean", "*.wav")))
+            self.noisy_files = sorted(glob(join(data_dir, subset, "noisy", "*.wav")))
         elif format == "ears_wham":
-            self.clean_files = sorted(glob(join(data_dir, subset, "clean", "**", "*.wav"), recursive=True))[:10]
-            self.noisy_files = sorted(glob(join(data_dir, subset, "noisy", "**", "*.wav"), recursive=True))[:10]
+            self.clean_files = sorted(glob(join(data_dir, subset, "clean", "**", "*.wav"), recursive=True))
+            self.noisy_files = sorted(glob(join(data_dir, subset, "noisy", "**", "*.wav"), recursive=True))
         else:
             # Feel free to add your own directory format
             raise NotImplementedError(f"Directory format {format} unknown!")
