@@ -5,9 +5,14 @@ This repository contains the official PyTorch implementations for the papers:
 - Bunlong Lay, Rostislav Makarov, Timo Gerkmann [*"Diffusion Buffer: Online Diffusion-based Speech Enhancement with Sub-Second Latency"*](https://arxiv.org/abs/2506.02908), ISCA Interspeech, Rotterdam, August 2025. [[bibtex]](#citations--references)
 
 
+## Installation
+
+-TODO: add requirements.txt
+
+
 ## Pretrained checkpoints
 
--TODO
+-Find here the ckpt of BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered EARS-WHAM: https://drive.google.com/drive/folders/1NjNiPj42wZ6NyQT4ykZcwxNjhqkbnLD9?usp=drive_link. See under eval how to evaluate this.
       
 
 
@@ -46,7 +51,12 @@ python --test_dir <path_to_testdir>
             --ckpt <path_to_ckpt.ckpt>
 ```
 
-to generate the enhanced .wav files and compute metrics on the enhanced files (the test_dir must contain noisy and clean) The enhanced files are saved in parent_folder/subfolder given by experiments_folder and destination_folder. Note that this script evaluates in an online fashion and therefore takes more time to process than offline processing.
+to generate the enhanced .wav files and compute metrics on the enhanced files (the test_dir must contain noisy and clean) The enhanced files are saved in parent_folder/subfolder given by experiments_folder and destination_folder. Note that this script evaluates in an online fashion and therefore takes more time to process than offline processing. For the provided ckpt above please set
+
+```bash
+--reverse_starting_point 0.8 --N 30
+``
+
 
 
 
