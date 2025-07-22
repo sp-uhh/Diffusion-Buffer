@@ -42,12 +42,11 @@ To evaluate on a test set, run
 python --test_dir <path_to_testdir>
             --experiments_folder <parent_folder>
             --destination_folder <subfolder>
-            --reverse_starting_point 0.8 --N 30
+            --reverse_starting_point <enter_rsp_from_ckpt> --N <enter_bufferlength_from_ckpt>
             --ckpt <path_to_ckpt.ckpt>
 ```
 
-to generate the enhanced .wav files and compute metrics on the enhanced files. The enhanced files are saved in parent_folder/subfolder given by experiments_folder and destination_folder.
-Note that this script evaluates in an online fashion and therefore takes more time to process than offline processing.
+to generate the enhanced .wav files and compute metrics on the enhanced files (the test_dir must contain noisy and clean) The enhanced files are saved in parent_folder/subfolder given by experiments_folder and destination_folder. Note that this script evaluates in an online fashion and therefore takes more time to process than offline processing.
 
 
 
