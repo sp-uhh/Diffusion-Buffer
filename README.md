@@ -2,7 +2,7 @@
 
 This repository contains the official PyTorch implementations for the papers:
 
-- Bunlong Lay, Rosislav Makarov, Timo Gerkmann [*"Diffusion Buffer: Online Diffusion-based Speech Enhancement with Sub-Second Latency"*](https://arxiv.org/abs/2506.02908), ISCA Interspeech, Rotterdam, August 2024. [[bibtex]](#citations--references)
+- Bunlong Lay, Rostislav Makarov, Timo Gerkmann [*"Diffusion Buffer: Online Diffusion-based Speech Enhancement with Sub-Second Latency"*](https://arxiv.org/abs/2506.02908), ISCA Interspeech, Rotterdam, August 2025. [[bibtex]](#citations--references)
 
 
 ## Pretrained checkpoints
