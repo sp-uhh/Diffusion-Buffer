@@ -33,7 +33,7 @@ To see all available training options, run `python train.py --help`. Note that t
 More advanced example (this will reproduce BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered EARS-WHAM)
 
 ```bash
-python train.py --base_dir <enterpath> --batch_size 32 --backbone ncsnpp --sde bbed 
+python train.py --base_dir <enterpath> --batch_size 32 --backbone ncsnpp --sde bbed --format ears_wham
 --t_eps 0.03 --num_eval_files 3 --spec_abs_exponent 0.5 --spec_factor 0.15 --loss_abs_exponent 1 --loss_type mse --theta 0.08 --k 2.6 --timestep_type_inf default 
 --wandb_name <entername> --fs 16000 --audiologs_every_epoch 25 --speclogs_every_epoch 25 --save_every_n_epochs 0 --wandb_project_name <entername> --ch_mult 1 2 2 2
 --hop_length 256 --n_fft 510 --num_frames 128 --normalize not --output_scale time --num_res_blocks 1 --format noise
