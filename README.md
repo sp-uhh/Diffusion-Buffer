@@ -51,7 +51,7 @@ python --test_dir <path_to_testdir>
             --ckpt <path_to_ckpt.ckpt>
 ```
 
-to generate the enhanced .wav files and compute metrics on the enhanced files (the test_dir must contain noisy and clean) The enhanced files are saved in parent_folder/subfolder given by experiments_folder and destination_folder. Note that this script evaluates in an online fashion and therefore takes more time to process than offline processing. For the provided ckpt above please set reverse_starting_point to 0.8, and N to 30.
+to generate the enhanced .wav files and compute metrics on the enhanced files (the test_dir must contain noisy and clean) The enhanced files are saved in parent_folder/subfolder given by experiments_folder and destination_folder. Note that this script evaluates in an online fashion. For the provided ckpt above please set reverse_starting_point to 0.8, and N to 30.
 
 
 
