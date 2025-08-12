@@ -18,19 +18,7 @@ This repository contains the official PyTorch implementations for the papers:
 
 ## Training
 
-Training is done by executing `train.py`. A minimal running example with default settings (as in our paper [1]) can be run with
-
-```bash
-python train.py --base_dir <your_base_dir>
-```
-
-where `your_base_dir` should be a path to a folder containing subdirectories `train/` and `valid/` (optionally `test/` as well). Each subdirectory must itself have two subdirectories `clean/` and `noisy/`, with the same filenames present in both. We currently only support training with `.wav` files.
-
-To see all available training options, run `python train.py --help`. Note that the available options for the SDE and the backbone network change depending on which SDE and backbone you use. These can be set through the `--sde` and `--backbone` options.
-
-
-
-More advanced example (this will reproduce BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered EARS-WHAM)
+Training is done by executing `train.py`. An example (this will reproduce BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered EARS-WHAM) is:
 
 ```bash
 python train.py --base_dir <enterpath> --batch_size 32 --backbone ncsnpp --sde bbed --format ears_wham
