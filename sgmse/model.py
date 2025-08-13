@@ -31,8 +31,8 @@ class ScoreModel(pl.LightningModule):
         parser.add_argument("--loss_abs_exponent", type=float, default= 0.5,  help="magnitude transformation in the loss term")
         parser.add_argument("--output_scale", type=str, choices=('sigma', 'time', 'no'), default= 'time',  help="backbone model scale before last output layer")
         parser.add_argument("--timestep_type_inf", type=str, default= 'default',  help="Default: Taking uniformly steps during inference")
-        parser.add_argument("--audiologs_every_epoch", type=int, help="log audios every nth epoch")
-        parser.add_argument("--speclogs_every_epoch", type=int, help="log specs every nth epoch")
+        parser.add_argument("--audiologs_every_epoch", type=int, default=25, help="log audios every nth epoch")
+        parser.add_argument("--speclogs_every_epoch", type=int, default=25, help="log specs every nth epoch")
         parser.add_argument("--diff_buffer_range", type=int, nargs=2, required=False, default=[5,35],
         help="During training sample random B in that range. B = number of reverse steps = Buffer length ")
         parser.add_argument("--diff_buffer_length_inference", type=int, default=2, help="Diff buffer Length = Num of reverse steps required during inference in the val script.")
