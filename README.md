@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ## Training
 
-Training is done by executing `train.py`. An example (this will reproduce BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered EARS-WHAM) is:
+Training is done by executing `train.py`. An example (this will reproduce BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered [EARS-WHAM](https://github.com/sp-uhh/ears_benchmark)) is:
 
 ```bash
 python train.py --base_dir <enterpath> --batch_size 32 --backbone ncsnpp --sde bbed --format ears_wham \
