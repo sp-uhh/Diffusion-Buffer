@@ -8,8 +8,12 @@ Find a demo video here https://www.youtube.com/watch?v=Do0Vmwlih4w
 
 ## Installation
 
--TODO: add requirements.txt
-
+Clone the repository and install dependencies
+```bash
+git clone https://github.com/sp-uhh/Diffusion-Buffer.git
+cd Diffusion-Buffer
+pip install -r requirements.txt
+```
 
 ## Pretrained checkpoints
 

@@ -1,0 +1,16 @@
+audiomentations==0.41.0
+librosa==0.10.2.post1
+matplotlib==3.10.1
+numpy==2.2.5
+pandas==2.2.3
+pesq==0.0.4
+pystoi==0.4.1
+pytorch_lightning
+scipy==1.15.2
+soundfile==0.13.1
+torch==2.7.0
+torch_ema
+torchaudio==2.7.0
+tqdm==4.67.1
+wandb==0.19.10
+wvmos==1.0
