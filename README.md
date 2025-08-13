@@ -22,21 +22,21 @@ Find a demo video here https://www.youtube.com/watch?v=Do0Vmwlih4w
 Training is done by executing `train.py`. An example (this will reproduce BBED with B = 30 reverse steps/buffer length from the paper when trained on filtered EARS-WHAM) is:
 
 ```bash
-python train.py --base_dir <enterpath> --batch_size 32 --backbone ncsnpp --sde bbed --format ears_wham
---t_eps 0.03 --num_eval_files 3 --spec_abs_exponent 0.5 --spec_factor 0.15 --loss_abs_exponent 1 --loss_type mse --theta 0.08 --k 2.6 --timestep_type_inf default 
---wandb_name <entername> --fs 16000 --audiologs_every_epoch 25 --speclogs_every_epoch 25 --save_every_n_epochs 0 --wandb_project_name <entername> --ch_mult 1 2 2 2
---hop_length 256 --n_fft 510 --num_frames 128 --normalize not --output_scale time --num_res_blocks 1 --format noise
---diff_gate_range 30 31 --nf 96 --wandb_entity <entername> --diff_gate_length_inference 30 --T_sampling 0.8
+python train.py --base_dir <enterpath> --batch_size 32 --backbone ncsnpp --sde bbed --format ears_wham \
+--t_eps 0.03 --num_eval_files 3 --spec_abs_exponent 0.5 --spec_factor 0.15 --loss_abs_exponent 1 --loss_type mse --theta 0.08 --k 2.6 --timestep_type_inf default \
+--wandb_name <entername> --fs 16000 --audiologs_every_epoch 25 --speclogs_every_epoch 25 --save_every_n_epochs 0 --wandb_project_name <entername> --ch_mult 1 2 2 2 \
+--hop_length 256 --n_fft 510 --num_frames 128 --normalize not --output_scale time --num_res_blocks 1 --format noise \
+--diff_buffer_range 30 31 --nf 96 --wandb_entity <entername> --diff_buffer_length_inference 30 --T_sampling 0.8
 ```
 
 ## Evaluation
 
 To evaluate on a test set, run
 ```bash
-python --test_dir <path_to_testdir>
-            --experiments_folder <parent_folder>
-            --destination_folder <subfolder>
-            --reverse_starting_point <enter_rsp_from_ckpt> --N <enter_bufferlength_from_ckpt>
+python eval.py --test_dir <path_to_testdir> \
+            --experiments_folder <parent_folder> \
+            --destination_folder <subfolder> \
+            --reverse_starting_point <enter_rsp_from_ckpt> --N <enter_bufferlength_from_ckpt> \
             --ckpt <path_to_ckpt.ckpt>
 ```
 
