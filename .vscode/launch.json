@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+
+
+        {
+            "name": "train",
+            "type": "python",
+            "request": "launch",
+            "program": "train.py"
+            "args": ["--base_dir", "/export/home/lay/PycharmProjects/data/wsj0_chime3",
+            "--batch_size", "2", "--backbone", "ncsnpp", "--sde", "ouve", "--theta", "1.5", 
+            "--num_res_blocks", "1", "--ch_mult", "1", "2", "2", "2", 
+            "--speclogs_every_epoch", "0", "--num_res_blocks", "1",  "--gradclip", "5.0", 
+            "--t_eps", "0.03", "--num_eval_files", "3",
+            "--num_frames", "128", "--hop_length", "256", "--fixed_buffer_steps", 
+            "--spec_abs_exponent",  "0.5", "--spec_factor", "0.15", "--git_branch", 
+            "diff buffer", "--nolog", "--loss_abs_exponent", "1", "--normalize", "not", 
+            "--non_compile_model",
+            "--loss_type", "mse",  "--output_scale", "no", "--diff_buffer_length_inference", "10",
+            "--audiologs_every_epoch", "20", "--diff_buffer_range", "10", "11",]
+        },
+
+
+        {
+            "name": "eval.py",
+            "type": "python",
+            "request": "launch",
+            "program": "eval.py",
+            "args": ["--test_dir", "/data/EARS-WHAM-16k-filtered",
+            "--experiments_folder", "./enhanced/test",
+            "--destination_folder", "debug",
+            "--reverse_starting_point", "0.8", "--N", "30",
+            "--ckpt", "./ckpts/hubp1um1/last.ckpt"]
+        },
+    ]
+}
